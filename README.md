@@ -3,27 +3,27 @@
 </div>
 
 <div align="center">
-  <img width="100" title="barbershop logo" src=".github/logo.png"/>
+  <img width="100" title="plann.er logo" src=".github/logo.png"/>
 </div>
 
 <div align="center">
   <p>
-    This project is about building a basic and simple landing page refined with animations that bring the static layout to life where the user can schedule an appointment with the barbershop through contact via WhatsApp, this landing page was built with nothing more and nothing less than HTML and CSS processed by SASS and light touches of Javascript.
+    This project is built with React, TailwindCSS and some other tools such as Axios, React-Router-Dom, Lucide-React, Date-FNS, Sonner, Vite, Typescript, React-Day-Picker to develop a planning and management application. combined trips between friends where there is another application built on the server side that works by storing the trip information.
   </p>
 </div>
 
 <div align="center">
-  <a href="https://classic.yarnpkg.com/lang/en/docs/" target="_blank">
-    <img alt="Static Badge" src="https://img.shields.io/badge/yarn-v1.3.4-green">
+  <a href="https://www.npmjs.com/package/pnpm" target="_blank">
+    <img alt="Static Badge" src="https://img.shields.io/badge/pnpm-v9.6.0-green">
   </a>
-  <a href="https://sass-lang.com/documentation/" target="_blank">
-    <img alt="Static Badge" src="https://img.shields.io/badge/sass-1.77.8-e82910">
+  <a href="https://www.npmjs.com/package/react" target="_blank">
+    <img alt="Static Badge" src="https://img.shields.io/badge/react-18.3.1-3581f2">
   </a>
-  <a href="https://michalsnik.github.io/aos/" target="_blank">
-    <img alt="Static Badge" src="https://img.shields.io/badge/aos animation-2.3.1-yellow">
+  <a href="https://www.npmjs.com/package/tailwindcss" target="_blank">
+    <img alt="Static Badge" src="https://img.shields.io/badge/tailwindcss-3.4.4-yellow">
   </a>
-  <a href="https://fontawesome.com/" target="_blank">
-    <img alt="Static Badge" src="https://img.shields.io/badge/font awesome-6.0.0-3581f2.svg">
+  <a href="https://www.npmjs.com/package/axios" target="_blank">
+    <img alt="Static Badge" src="https://img.shields.io/badge/axios-1.7.2-ae34eb.svg">
   </a>
   <a href="https://choosealicense.com/" target="_blank">
     <img alt="Static Badge" src="https://img.shields.io/badge/License-MIT-green.svg">
@@ -36,26 +36,31 @@
 ## 🛠️ Technologies
 
 - HTML5, CSS3, JS ES6+
-- [Node e Yarn](https://nodejs.org/)
-- [SASS](https://sass-lang.com/documentation/)
-- [AOS animation](https://michalsnik.github.io/aos/)
-- [Font Awesome](https://fontawesome.com/)
-- [Eslint](https://eslint.org/)
-- [Prettier](https://prettier.io/)
+- [Node e Pnpm](https://nodejs.org/)
+- [React](https://react.dev/)
+- [React-day-picker](https://github.com/gpbl/react-day-picker)
+- [React-router-dom](https://reactrouter.com/en/main)
+- [TailwindCSS](https://tailwindcss.com/docs/installation)
+- [Tailwind-variants](https://www.tailwind-variants.org/)
+- [Lucide-react](https://lucide.dev/guide/packages/lucide-react)
+- [Date-fns](https://date-fns.org/)
+- [Sonner](https://sonner.emilkowal.ski/)
+- [Axios](https://axios-http.com/ptbr/docs/intro)
+- [Vite](https://vitejs.dev/)
 
 ## 📣 Funcionalities
 
-- Location with a graphical map
-- Comfortable visual animations
-- Social media menu
-- WhatsApp button
+- Collects all trip data (Destination, Start and end of trip, guests, organizer)
+- Create the trip and send invitation emails
+- Create activities, invite new members, add new links
+- Manage activities, members and important links
 
 ## 💿 Installing
 
 Install the project with the following command
 
 ```bash
-  yarn install
+  pnpm install
 ```
 
 ## 🚀 Deploy
@@ -66,15 +71,19 @@ To deploy this project, execute
   vercel
 ```
 
-## 💻 Running CSS
+## 💻 Running build
 
-To run the CSS, use the extension: Live Sass Compiler.
+To run the build, execute
+
+```bash
+  pnpm build
+```
 
 ## 🧰 Used stacks
 
-**Front-end:** HTML5, SASS, Javascript, AOS animation
+**Front-end:** React, TailwindCSS, React-Day-Picker, Axios, Date-FNS, Lucide-React, React-Router-Dom, Sonner, Tailwind-Variants, Vite
 
-**Back-end:** Not used
+**Back-end:** Node.js, Express, Prisma, Fastify, Dayjs, Nodemailer, Zod (in another repo)
 
 ## 📸 Screenshots
 
