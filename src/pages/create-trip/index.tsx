@@ -6,6 +6,7 @@ import { InviteGuestsModal } from "./invite-guests-modal";
 import { InviteGuestsStep } from "./steps/invite-guests-step";
 import { api } from "../../lib/axios";
 import { useNavigate } from "react-router-dom";
+import { toast } from "sonner";
 
 export function CreateTripPage() {
   const navigate = useNavigate();
@@ -79,34 +80,70 @@ export function CreateTripPage() {
   const createTrip = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
+    const toastStyle = {
+      color: "#1a2e05",
+      backgroundColor: "#a3e635",
+      border: "0",
+    };
+
     if (!destination) {
+      toast.error("Sem destino!", {
+        id: "without-destination",
+        style: toastStyle,
+      });
       return;
     }
 
     if (!eventStartAndEndDates?.from || !eventStartAndEndDates?.to) {
+      toast.error("Sem data de início e término!", {
+        id: "without-event-start-and-end-dates",
+        style: toastStyle,
+      });
       return;
     }
 
     if (emailsToInvite.length === 0) {
+      toast.error("Sem convidados selecionados!", {
+        id: "without-emails-to-invite",
+        style: toastStyle,
+      });
       return;
     }
 
     if (!ownerName || !ownerEmail) {
+      toast.error("Informe seus dados", {
+        id: "without-owner-data",
+        style: toastStyle,
+      });
       return;
     }
 
-    const res = await api.post("/trips", {
-      destination,
-      starts_at: eventStartAndEndDates.from,
-      ends_at: eventStartAndEndDates.to,
-      emails_to_invite: emailsToInvite,
-      owner_name: ownerName,
-      owner_email: ownerEmail,
-    });
+    try {
+      const res = await api.post("/trips", {
+        destination,
+        starts_at: eventStartAndEndDates.from,
+        ends_at: eventStartAndEndDates.to,
+        emails_to_invite: emailsToInvite,
+        owner_name: ownerName,
+        owner_email: ownerEmail,
+      });
 
-    const { tripId } = res.data;
+      const { tripId } = res.data;
 
-    navigate(`/trips/${tripId}`);
+      navigate(`/trips/${tripId}`);
+
+      toast.success("Viagem criada!", {
+        id: "created-trip",
+        style: toastStyle,
+      });
+    } catch (error: any) {
+      toast.error(error.message, {
+        id: "error-create-trip",
+        style: toastStyle,
+      });
+
+      console.error(`${error.message}: Verifique se a API está rodando!`);
+    }
   };
 
   return (

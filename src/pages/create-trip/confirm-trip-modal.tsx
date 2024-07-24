@@ -23,11 +23,11 @@ export function ConfirmTripModal({
 }: ConfirmTripModal) {
   return (
     <div className="fixed inset-0 bg-black/60 flex items-center justify-center">
-      <div className="w-[640px] rounded-xl py-5 px-6 shadow-shape bg-zinc-900 space-y-5">
+      <div className="max-w-[288px] md:max-w-[640px] rounded-xl py-5 px-6 shadow-shape bg-zinc-900 space-y-5">
         <div className="space-y-2">
           <div className="flex items-center justify-between">
             <h2 className="text-lg font-semibold">
-              Confirmar criação de viagem
+              Confirmar viagem?
             </h2>
             <button type="button" onClick={closeConfirmTripModal}>
               <X className="size-5 text-zinc-400" />
@@ -38,7 +38,9 @@ export function ConfirmTripModal({
             <span className="text-semibold text-zinc-100">{destination}</span>{" "}
             nas datas de{" "}
             <span className="font-semibold text-zinc-100">
-              {formatDateString(eventStartAndEndDates)}
+              {eventStartAndEndDates
+                ? formatDateString(eventStartAndEndDates)
+                : "XX de XXXX até XX de XXXX"}
             </span>{" "}
             preencha seus dados abaixo:
           </p>
@@ -65,7 +67,7 @@ export function ConfirmTripModal({
             />
           </div>
           <Button type="submit" size="full">
-            Confirmar criação da viagem
+            Sim, tudo pronto!
           </Button>
         </form>
       </div>
