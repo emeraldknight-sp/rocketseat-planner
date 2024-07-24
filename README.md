@@ -62,7 +62,6 @@ Install the project with the following command
 ```bash
   pnpm install
 ```
-
 ## 🚀 Deploy
 
 To deploy this project, execute
@@ -70,7 +69,6 @@ To deploy this project, execute
 ```bash
   vercel
 ```
-
 ## 💻 Running build
 
 To run the build, execute
@@ -78,7 +76,18 @@ To run the build, execute
 ```bash
   pnpm build
 ```
+## ⚙️ Running back-end (API)
 
+To run the application back-end you need to clone the repository:
+
+```bash
+  git clone git@github.com:emeraldknight-sp/rocketseat-planner-api.git
+```
+Add a .env file with the environment variables in .env.example and run the following command:
+
+```bash
+  pnpm dev
+```
 ## 🧰 Used stacks
 
 **Front-end:** React, TailwindCSS, React-Day-Picker, Axios, Date-FNS, Lucide-React, React-Router-Dom, Sonner, Tailwind-Variants, Vite
